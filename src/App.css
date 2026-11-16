@@ -1,0 +1,315 @@
+/* ---------- Páginas (container geral) ---------- */
+.votacao,
+.resultado {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 3rem;
+}
+
+.votacao h1,
+.resultado h1 {
+  color: var(--ouro);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.votacao h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+}
+
+/* ---------- Cards (indicados, suspenso, elenco) ---------- */
+.card {
+  position: relative;
+  background: var(--grafite);
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: transform 0.15s ease, outline-offset 0.15s ease;
+}
+
+.card-foto {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 0;
+  border-radius: 8px;
+  background: var(--grafite-claro);
+}
+
+.card-numero {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  color: var(--ouro);
+}
+
+.card-nome {
+  font-size: 1.05rem;
+  margin: 0.2rem 0 0;
+}
+
+.card-posicao {
+  color: var(--cinza);
+  margin: 0.1rem 0 0.7rem;
+  font-size: 0.9rem;
+}
+
+.card button {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.55rem;
+  font: 800 0.95rem var(--fonte-texto);
+  cursor: pointer;
+  background: var(--ouro);
+  color: var(--preto);
+}
+
+.card button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.card-indicado {
+  border: 2px solid var(--ouro);
+}
+
+.card-suspenso {
+  border: 2px solid var(--amarelo);
+}
+
+.card-elenco {
+  border: 2px solid var(--grafite-claro);
+  filter: grayscale(1);
+}
+
+.card-selecionado {
+  outline: 5px solid var(--gramado);
+  outline-offset: 4px;
+  transform: translateY(-8px);
+}
+
+.selo {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.selo-indicado {
+  background: var(--ouro);
+  color: var(--preto);
+}
+
+.selo-suspenso {
+  background: var(--amarelo);
+  color: var(--preto);
+}
+
+/* ---------- Grades ---------- */
+.grade-indicados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.grade-elenco {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grade-indicados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .grade-indicados {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Barra de confirmação ---------- */
+.confirmacao {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--branco);
+  color: var(--preto);
+  border-radius: 10px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.confirmacao p {
+  margin: 0;
+  font-weight: 800;
+}
+
+.confirmacao button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font: 800 1rem var(--fonte-texto);
+  cursor: pointer;
+  background: var(--gramado);
+  color: var(--branco);
+}
+
+.confirmacao button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Histórico ---------- */
+.historico {
+  margin-top: 2rem;
+}
+
+.historico ol {
+  padding-left: 1.4rem;
+}
+
+/* ---------- Resultado ---------- */
+.resultado-total {
+  font-size: 1.1rem;
+}
+
+.disputa {
+  background: var(--grafite);
+  border-left: 4px solid var(--ouro);
+  padding: 0.8rem 1.1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.sem-votos {
+  font-size: 1.1rem;
+}
+
+.placar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.placar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--grafite);
+  border: 2px solid var(--grafite-claro);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.placar-posicao {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  color: var(--cinza);
+  width: 2.5rem;
+  text-align: center;
+}
+
+.placar-foto {
+  width: 70px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 0;
+  border-radius: 6px;
+}
+
+.placar-info {
+  flex: 1;
+}
+
+.placar-info h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  text-transform: none;
+}
+
+.selo-placar {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--grafite-claro);
+}
+
+.barra {
+  overflow: hidden;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--grafite-claro);
+}
+
+.barra-preenchida {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--cinza);
+  transition: width 0.4s ease;
+}
+
+.placar-detalhe {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: var(--cinza);
+}
+
+.placar-craque {
+  border-color: var(--ouro);
+}
+
+.placar-craque .barra-preenchida {
+  background: var(--ouro);
+}
+
+.placar-vice {
+  border-color: var(--prata);
+}
+
+.placar-vice .barra-preenchida {
+  background: var(--prata);
+}
+
+.acoes-resultado {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.acoes-resultado button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font: 800 0.95rem var(--fonte-texto);
+  cursor: pointer;
+  background: var(--grafite-claro);
+  color: var(--branco);
+}
+
+.acoes-resultado button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
